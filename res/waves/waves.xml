@@ -1,0 +1,24 @@
+ <gamerounds>
+  <normal>
+    <R1>Blob</R1>
+    <R2>Blob,Blob</R2>
+    <R3>Tree</R3>
+    <R4>Tree,Blob</R4>
+    <R5>Tree,Tree</R5>
+    <R6>Tree,Blob,Tree</R6>
+    <R7>Blob,Tree</R7>
+    <R8>Blob,Blob,Tree</R8>
+    <R9>Tree,Tree,Tree</R9>
+    <R10>TreeGolem</R10>
+    <R11>Blob</R11>
+    <R12>Wolf</R12>
+    <R13>Wolf, Bat</R13>
+    <R14>Bat,Bat</R14>
+    <R15>Bat,Wolf</R15>
+    <R16>Bat,Bat,Bat</R16>
+    <R17>Bat,Wolf,Bat</R17>
+    <R18>Wolf,Bat,Wolf</R18>
+    <R19>Wolf,Wolf,Wolf</R19>
+    <R20>Vampire</R20>
+  </normal>
+</gamerounds>

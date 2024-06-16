@@ -1,0 +1,9 @@
+-cp src
+-lib heaps
+#-lib hlsdl
+-lib format
+-lib random
+-js youreawizardharry.js
+#-hl boxbox.hl
+#-hl bin/BoxBox.c
+-main Main
