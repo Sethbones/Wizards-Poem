@@ -1,2 +1,2 @@
 # Wizards-Poem
-source code for the haxjam 2024 summer jam submission: Wizard's Poem
+source code for the HaxeJam 2024 Summer Jam submission: Wizard's Poem
