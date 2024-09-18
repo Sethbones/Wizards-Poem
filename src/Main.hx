@@ -12,12 +12,13 @@ import h2d.Layers;
 import h3d.Vector;
 import hxd.Pixels.PixelsFloatRGBA;
 import hxd.Window;
-//honestly the more i work on this the more it feels like i'm making my own game engine
+//ended up making a fork of heaps, let's see where that takes me
 import GlobalFuncs.Global;
 import GameScene.GameController;
 
 
 class Main extends hxd.App {
+    //some remains from an old BoxBox port
     var bmp : h2d.Bitmap;
     public static var console:h2d.Console = null;
     var consoleVisible = false;
@@ -31,6 +32,11 @@ class Main extends hxd.App {
     public static var StatTillBoss:h2d.Text;
     public static var StatLongestWord:h2d.Text;
 
+    public static var Resolution ={
+        Width: 960, //Screen's Width
+        Height: 540, //Screen's Height
+        Scale: 1.0, //Screen's Scale
+    }
 
 
     public function new() {//i'm gonna have to assume this is what happens pre init, like awake in unity
@@ -41,11 +47,16 @@ class Main extends hxd.App {
         s2d;
         s2d;
         //trace(s2d.name);
-        hxd.Res.initEmbed(); //this is needed for graphics
-        Window.getInstance().resize(960,540);
+        //from my understandings
+        hxd.Res.initEmbed(); //this is for embedding graphics in the code of the final product
+        //hxd.Res.initLocal(); //this is for having it take files from the local file system //which is not available for JS, which is only only mentioned in a random github issue
+        //hxd.Res.initPak(); //this is for compressing assets into seperate pak files 
+
+        s2d.defaultSmooth = true; //applies a basic blilinear filter
+        
+        Window.getInstance().resize(Std.int(Resolution.Width),Std.int(Resolution.Height));
         //s2d.scaleMode = ScaleMode.Zoom(2);
         GameController.InitFont();
-        
         var Back = hxd.Res.ast.Background;
         var Backdata = Back.toTile();
         var Backbmp = new h2d.Bitmap(Backdata,s2d);
@@ -75,7 +86,7 @@ class Main extends hxd.App {
         var row3:Array<String> = [Global.RandomLetter(),Global.RandomLetter(),Global.RandomLetter(),Global.RandomLetter()];
         var row4:Array<String> = [Global.RandomLetter(),Global.RandomLetter(),Global.RandomLetter(),Global.RandomLetter()];
         
-        engine.backgroundColor = 0x323232; //this is really only here so i can see the edges of the screen
+        //engine.backgroundColor = 0x323232; //this is really only here so i can see the edges of the screen, not needed anymore
         
         //wall of text incoming
         for (index => l in row1){
@@ -255,7 +266,7 @@ class Main extends hxd.App {
 
     // on each frame
     override function update(dt:Float) {
-        //GameLayer.DelayedDraw(dt);
+        //GameLayer.DelayedDraw(dt); //this was part of a different project
         
         // if (Key.isPressed(Key.ENTER)){
         //     GameController.PlayerAttack();
@@ -265,10 +276,33 @@ class Main extends hxd.App {
         //     GameController.ResetWordList();
         //     trace(GameController.WordList);
         // }
-        if (Key.isPressed(Key.TAB)){
-            trace(8 % 4);
+        if (Key.isPressed(Key.TAB)){//ol reliable
+            // trace(Window.getInstance().height);
+            //trace(Window.getInstance().width);
+            // trace(Window.getInstance().width / 960);
+            trace(s2d.scaleX);
+            trace(Resolution.Width * Resolution.Scale);
+            trace( ( (s2d.width - Resolution.Width) / Resolution.Width )*100 );
+            trace( ( (s2d.height - Resolution.Height) / Resolution.Height )*100 );
+            trace(s2d.height);
+            //trace( ( s2d.width - (Resolution.Width * Resolution.Scale) ) );
+            //trace(s2d.);
+            //Window.getInstance().resize(960,540); //what was originally used to set the resolution
         }
 
+        var widthscale = ( (s2d.width - Resolution.Width) / Resolution.Width )*100;
+        var heightscale = ( (s2d.height - Resolution.Height) / Resolution.Height )*100;
+        if (heightscale < widthscale){
+            Resolution.Scale = s2d.height / Resolution.Height;
+        }
+        else{
+            Resolution.Scale = s2d.width / Resolution.Width;
+        }
+        
+        s2d.scaleX = Resolution.Scale; //i have no idea if its a bad idea to set this over and over and over again
+        s2d.scaleY = Resolution.Scale;
+        s2d.x = ( s2d.width - (Resolution.Width * Resolution.Scale) ) / 2 ;
+        s2d.y = ( s2d.height - (Resolution.Height * Resolution.Scale) ) / 2 ;
 
         // public static var CurrentRound:String = "0/10";
         // public static var RoundsTillBoss:String = "10";
