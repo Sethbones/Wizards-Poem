@@ -2,7 +2,8 @@ Wizard's Poem
 =====
 
 ## Description
-Source Code for the HaxeJam 2024 Summer Jam game Wizard's Poem
+Made with Heaps Game Engine
+Source Code for the HaxeJam 2024 Summer Jam Submission: Wizard's Poem
 a game in the vein of Bookworm Adventures
 in which a player is tasked to string together words to deal damage to targets.
 
