@@ -7,7 +7,7 @@ a game in the vein of Bookworm Adventures
 in which a player is tasked to string together words to deal damage to targets.
 
 ## Screenshots
-[![Wizard's Poem Logo](https://raw.githubusercontent.com/Sethbones/Wizards-Poem/master/res/ast/itch%20card%20final.png)]
+![Wizard's Poem Logo](https://raw.githubusercontent.com/Sethbones/Wizards-Poem/master/res/ast/itch%20card%20final.png)
 ## Requirements
 #### Windows
 * [Haxe](https://haxe.org/download/) (Use Installer)
@@ -53,7 +53,7 @@ haxe compile.hxml
 ```
 
 ## Running
-open index.html with your favorite browser
+open index.html in the game's directory with your favorite browser
 
 ## License
 Everything in here is licensed under the BSD 3-Clause 'New' or 'Revised' License; see LICENSE file for details.
