@@ -1,6 +1,6 @@
 Wizard's Poem
 =====
-
+![Wizard's Poem Logo](https://raw.githubusercontent.com/Sethbones/Wizards-Poem/master/res/ast/itch%20card%20final.png)
 ## Description
 Made with Heaps Game Engine
 Source Code for the HaxeJam 2024 Summer Jam Submission: Wizard's Poem
@@ -8,7 +8,7 @@ a game in the vein of Bookworm Adventures
 in which a player is tasked to string together words to deal damage to targets.
 
 ## Screenshots
-![Wizard's Poem Logo](https://raw.githubusercontent.com/Sethbones/Wizards-Poem/master/res/ast/itch%20card%20final.png)
+![Wizard's Poem Game](https://img.itch.zone/aW1hZ2UvMjc3NzA2My8xNjU3MTA0OS5wbmc=/original/lCaHlw.png)
 ## Requirements
 #### Windows
 * [Haxe](https://haxe.org/download/) (Use Installer)
