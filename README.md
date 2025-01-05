@@ -1,3 +1,4 @@
+# Play here: [https://bonemanseth.itch.io/boxbox](https://bonemanseth.itch.io/wizards-poem)
 Wizard's Poem
 =====
 ![Wizard's Poem Logo](https://raw.githubusercontent.com/Sethbones/Wizards-Poem/master/res/ast/itch%20card%20final.png)
